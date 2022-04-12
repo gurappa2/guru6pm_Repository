@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Read Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+   <div class="container">
+       {% if employee_list %}
+       {% for employee in employee_list %}
+               <ol>
+                 <li> Employee Id is :{{ employee.id }}</li>
+                  <li> Employee Number is :{{ employee.eno }}</li>
+                  <li> Employee Name is :{{ employee.ename}}</li>
+                  <li> Employee Salary is :{{ employee.salary }}</li>
+                  <li> Employee Address is :{{ employee.address}}</li>
+               </ol>
+               <hr>
+           {% endfor %}
+       {% else %}
+          <h1> Employee Data not available:</h1>
+       {% endif %}
+   </div>
+
+</body>
+</html>
